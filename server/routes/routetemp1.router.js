@@ -4,7 +4,7 @@ const pool = require('../modules/pool');
 
 // GET ROUTE
 router.get('/', (req, res) => {
-  const queryinfotemp = `SELECT * FROM "sometablename"`;
+  const queryinfotemp = `SELECT * FROM "weekend_to_do_app"`;
     pool.query(queryinfotemp)
     .then((responseDB) => {
         const dbRows = responseDB.rows;

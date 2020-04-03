@@ -3,7 +3,7 @@ const Pool = pg.Pool;
 
 // SERVER TO DATABASE CONFIGURATION
 const pool = new Pool({
-    database: 'somedatabase',
+    database: 'weekend_to_do_app',
     host: 'localhost',
     port: 5432,
     max: 6,
