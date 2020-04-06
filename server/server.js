@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const busybee = require('./routes/getbusy.router');
+const getBusyRouter = require('./routes/getBusy.router');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // configuring our routes
-app.use('getbusy', busybee);
+app.use('getBusy', getBusyRouter);
 
 // KICK OFF APP
 app.listen(PORT, () => {

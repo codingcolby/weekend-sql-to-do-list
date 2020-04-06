@@ -14,8 +14,8 @@ pool.on('connect', () => {
     console.log('Time for swim, you have found the pool');
 });
 
-pool.on('error', (error) => {
-  console.log('Ut oh - you are in the deep end now with error: ', error);
+pool.on('error', err => {
+  console.log(`Ut oh - you are in the deep end now with error: ${err}`);
 });
 
 module.exports = pool;
