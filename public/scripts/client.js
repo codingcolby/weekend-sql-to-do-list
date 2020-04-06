@@ -1,39 +1,40 @@
-console.log("Hello Client");
 $(document).ready(init);
 
-// DECLARED VARIABLES - OPTIONAL, USAGE WILL VARY
-// const someinfo = [];
-// let someinformation = [];
+let info = [];
 
 function init(event) {
-  console.log("Ready to Start");
-
 // EVENT LISTENERS
-$(".js-input-form").on("click", "js-btn-1", somefunction);
-
+$(".js-input-form").on("click", "js-btn-addTask", posttask);
+$(".js-input-form").on("click", "js-btn-deleteTask", getBusy);
+$(".js-input-form").on("click", "js-btn-doneTask", getBusy);
 // LOAD SOMETHING
-getsomething();
+getBusy();
 };
 
 // AJAX REQUESTS
 
-function getsomething(event) {
+function getBusy(event) {
   $.ajax({
     method: "GET",
-    url: "/routetemp1",
+    url: "/getbusy",
   })
-    .then((response) => {
-    render(response);
+    .then(response => {
+      info = response;
+      rendertodo();
     })
     .catch(err => {
     console.warn(err);
     });
 };
 
-function postsomething(event) {
+function posttask(event) {
+  const dataForServer = {
+    task_name: task_name,
+  };
+
   $.ajax({
     method: "POST",
-    url: "/routetemp1",
+    url: "/getbusy",
     data: datatemp,
     })
     .then((response) => {
@@ -46,16 +47,19 @@ function postsomething(event) {
 
 // RENDERING - DOM/DISPLAY
 
-function render(information) {
-  console.log(information);
-
-  $(".js-render").empty();
+function rendertodo() {
+  $(".js-listsDoDone").empty();
 
   for (let info of information) {
-    $(".js-render").append(`
-      <div>
-        <p>${info.item1} - ${info.item2}, ${info.item3}, ${info.item4}</p>
-      </div>
+    $(".js-listsDoDone").append(`
+    <td>${info.task_name}</td>
+    <td>${info.date_added}</td>
+    <td>${info.priority_level}</td>
+    <td>${info.resources_needed}</td>
+    <td>${info.do_delegate}</td>
+    <td>${info.due_date}</td>
+    <td> <button class="js-btn-doneTask" id="btn-doneTask" type="text" name="btn-doneTask">Completed</button></td>
+    <td> <button class="js-btn-deleteTask" id="btn-deleteTask" type="text" name="btn-deleteTask">Delete</button></td>
     `);
   }
 }
