@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="vendors/jquerytemp.js" type="text/javascript"></script>
+    <script src="scripts/client.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="styles/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Dos</title>
+
+</head>
+<body>
+    <h1>The To do, or not to do List</h1>
+
+
+<form class="js-input-form">
+    <table>
+        <thead>
+        <tr>
+            <th>Task Name</th>
+            <th>Date Added</th>
+            <th>Priority Level</th>
+            <th>Prep or materials</th>
+            <th>DO or DELEGATE?</th>
+            <th>Due Date</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input class="js-in-task-name" id="task-name" type="text" required name="task-name" placeholder="Task Name"></input></td>
+            <td> <input class="js-in-date-added" id="date-added" type="date" required name="date-added" placeholder="mm/dd/yyyy"></input></td>
+            <td> <input class="js-in-priority-level" id="priority-level" type="number" required name="priority-level" placeholder="1"></input></td>
+            <td><input class="js-in-resources-needed" id="resources-needed" type="text" name="resources-needed" placeholder="What is needed?"></input></td>
+            <td>  <input class="js-in-do-delegate" id="do-delegate" type="text" name="do-delegate" placeholder="Delegate"></input></td>
+            <td><input class="js-in-due-date" id="due-date" type="date" name="due-date" placeholder="Due Date"></input></td>
+            <td> <button class="js-btn-addTask" id="btn-addTask" type="text" name="btn-addTask">Add a Task</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+</form>
+
+    <div></div>
+
+    <div></div>
+
+    <div class="js-render-toDoList">
+    <h2 class="resultsHeader">Task History</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Date Added</th>
+                <th>Priority Level</th>
+                <th>Prep or materials</th>
+                <th>DO or DELEGATE?</th>
+                <th>Due Date</th>
+                <th colspan="2">Options</th>
+    
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input class="js-in-task-name" id="task-name" type="text" required name="task-name" placeholder="Task Name"></input></td>
+                <td> <input class="js-in-date-added" id="date-added" type="date" required name="date-added" placeholder="mm/dd/yyyy"></input></td>
+                <td> <input class="js-in-priority-level" id="priority-level" type="number" required name="priority-level" placeholder="1"></input></td>
+                <td><input class="js-in-resources-needed" id="resources-needed" type="text" name="resources-needed" placeholder="What is needed?"></input></td>
+                <td>  <input class="js-in-do-delegate" id="do-delegate" type="text" name="do-delegate" placeholder="Delegate"></input></td>
+                <td><input class="js-in-due-date" id="due-date" type="date" name="due-date" placeholder="Due Date"></input></td>
+                <td> <button class="js-btn-doneTask" id="btn-doneTask" type="text" name="btn-doneTask">Completed</button></td>
+                <td> <button class="js-btn-deleteTask" id="btn-deleteTask" type="text" name="btn-deleteTask">Delete</button></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- <div class="js-render-completedTasks"></div> -->
+
+</body>
+</html>

@@ -1,3 +1,74 @@
 body {
     background-color: blanchedalmond;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+form {
+border: 2px dashed darksalmon;
+height:80px;
+width: 98%;
+margin-bottom: 40px;
+}
+
+.resultsHeader {
+background-color: rgb(151, 167, 182);
+color: sienna;
+width: 100%;
+}
+
+tbody {
+    text-align: center;
+    width: 98%;
+}
+
+.js-in-completedTask {
+    width: larger;
+    height: larger;
+}
+
+.js-in-task-name {
+    width: 250px;
+}
+
+.js-in-date-added .js-in-date-due {
+    width: 160px;
+}
+
+.js-in-priority-level {
+    width: 40px;
+    text-align: center;
+    padding: 5px 5px;
+}
+
+.js-in-do-delegate {
+    width: 60px;
+    
+}
+
+input {
+    font-size: 14px;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 5px 5px;
+}
+
+.js-in-due-date {
+    color: firebrick;
+    font-weight: bold;
+}
+
+button {
+    background-color: rgb(113, 185, 144);
+    width: 100px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 5px 5px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.js-render-toDoList {
+    width: 98%;
 }
