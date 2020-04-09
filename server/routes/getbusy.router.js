@@ -4,7 +4,7 @@ const pool = require('../modules/pool');
 
 // GET ROUTE
 router.get("/", (req, res) => {
-  const queryinfo = `SELECT * FROM "weekend_to_do_app" ORDER BY "id"`;
+  const queryinfo = `SELECT * FROM "todolist" ORDER BY "id"`;
 
     pool.query(queryinfo)
     .then(response => {

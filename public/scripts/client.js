@@ -5,8 +5,8 @@ let info = [];
 function init(event) {
 // EVENT LISTENERS
 $("#js-input-form").on("submit", addTask);
-$(".js-listsDoDone").on("click", ".js-btn-deleteTask", deleteTask);
-$(".js-listsDoDone").on("click", ".js-btn-doneTask", pizzazz);
+$(".js-listDoDone").on("click", ".js-btn-deleteTask", deleteTask);
+$(".js-listDoDone").on("click", ".js-btn-doneTask", pizzazz);
 getBusy();
 }
 
@@ -91,7 +91,7 @@ function pizzazz() {
     .catch(err => {
       console.warn(err);
     });
-
+  }
 
 function getBusy() {
   $.ajax({
@@ -106,23 +106,23 @@ function getBusy() {
     console.warn(err);
         });
       }
-
+    
 // RENDERING - DOM/DISPLAY
 
 function rendertodo() {
-  $(".js-listsDoDone").empty();
+  $(".js-listDoDone").empty();
 
-  for (let info of information) {
-    $(".js-listsDoDone").append(`
+  for (let item of info) {
+    $(".js-listDoDone").append(`
     <tr>
-    <td>${info.task_name}</td>
-    <td>${info.date_added}</td>
-    <td>${info.priority_level}</td>
-    <td>${info.resources_needed}</td>
-    <td>${info.do_delegate}</td>
-    <td>${info.due_date}</td>
+    <td>${item.task_name}</td>
+    <td>${item.date_added}</td>
+    <td>${item.priority_level}</td>
+    <td>${item.resources_needed}</td>
+    <td>${item.do_delegate}</td>
+    <td>${item.due_date}</td>
     <td> <button class="js-btn-doneTask" id="btn-doneTask" type="text" name="btn-doneTask">Completed</button></td>
     <td> <button class="js-btn-deleteTask" id="btn-deleteTask" type="text" name="btn-deleteTask">Delete</button></td>
-    </tr>
+    </tr><hr>
     `);
-  }}}
+  }}

@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // configuring our routes
-app.use('getBusy', getBusyRouter);
+app.use('/getBusy', getBusyRouter);
 
 // KICK OFF APP
 app.listen(PORT, () => {
